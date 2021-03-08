@@ -24,8 +24,7 @@ class ApiBaseHelper {
       print('No net');
       throw FetchDataException('No Internet connection');
     }
-    print('api get recieved!');
-    return responseJson;
+    return responseJson['users'];
   }
 
   Future<dynamic> login(String _email, String _password) async {
@@ -48,7 +47,6 @@ class ApiBaseHelper {
     switch (response.statusCode) {
       case 200:
         var responseJson = json.decode(response.body.toString());
-        print(responseJson);
         return responseJson;
       case 400:
         throw BadRequestException(response.body.toString());

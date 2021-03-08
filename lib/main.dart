@@ -1,5 +1,7 @@
+import 'package:admin_panel_flutter/helper/api.dart';
 import 'package:admin_panel_flutter/locator.dart';
 import 'package:admin_panel_flutter/models/user/user_model.dart';
+import 'package:admin_panel_flutter/models/user_list/user_list_model.dart';
 import 'package:admin_panel_flutter/router/route_names.dart';
 import 'package:admin_panel_flutter/router/router.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +12,11 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
   setupLocator();
-  runApp(MultiProvider(
-      providers: [ListenableProvider<UserModel>(create: (_) => UserModel())],
-      child: MyApp()));
+  runApp(MultiProvider(providers: [
+    ListenableProvider<UserModel>(create: (_) => UserModel()),
+    ListenableProvider<UserListModel>(create: (_) => UserListModel())
+  ], child: MyApp()));
+  ApiBaseHelper().login('edogruca123@gmail.com', '123456');
 }
 
 class MyApp extends StatelessWidget {

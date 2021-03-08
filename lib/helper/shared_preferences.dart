@@ -7,6 +7,5 @@ Future setToken(String value) async {
 
 Future<String> getToken() async {
   final prefs = await SharedPreferences.getInstance();
-  print(prefs.get('token'));
   return prefs.get('token');
 }

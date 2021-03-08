@@ -11,8 +11,8 @@ class UserModel extends ChangeNotifier {
   String _errorCode;
   String _errorMessage;
 
-  String _name;
-  String _surname;
+  String _name = 'Eren';
+  String _surname = 'Doğruca';
   String _username = 'Eroo36';
   String _email = '';
 
