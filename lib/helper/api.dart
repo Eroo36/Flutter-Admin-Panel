@@ -13,7 +13,7 @@ class ApiBaseHelper {
     var responseJson;
     var _token = await getToken();
     var _headers = <String, String>{
-      'Authorization': _token,
+      'Authorization': _token ?? '',
       'Content-Type': 'application/json'
     };
     try {

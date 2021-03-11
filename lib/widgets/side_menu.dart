@@ -9,7 +9,7 @@ import 'package:admin_panel_flutter/helper/navigation_helper.dart';
 
 class SideMenuWidget extends StatelessWidget {
   SideMenuWidget({
-    Key key,
+    Key? key,
     menuItems,
   }) : super(key: key);
 
@@ -30,7 +30,7 @@ class SideMenuWidget extends StatelessWidget {
       width: displayWidth(context) / 8,
       height: displayHeight(context),
       decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.orange, Colors.red[300]])),
+          gradient: LinearGradient(colors: [Colors.orange, Colors.red[300]!])),
       child: Wrap(children: [
         Container(
             alignment: Alignment.center,

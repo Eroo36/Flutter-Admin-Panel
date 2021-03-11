@@ -243,9 +243,11 @@ packages:
   responsive_framework:
     dependency: "direct main"
     description:
-      name: responsive_framework
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: nullsafety
+      resolved-ref: "927af38168380882f87b7548558e4442b0d6fea3"
+      url: "https://github.com/Codelessly/ResponsiveFramework.git"
+    source: git
     version: "0.0.15"
   shared_preferences:
     dependency: "direct main"
@@ -365,5 +367,5 @@ packages:
     source: hosted
     version: "0.2.0"
 sdks:
-  dart: ">=2.12.0-259.9.beta <3.0.0"
+  dart: ">=2.12.0 <3.0.0"
   flutter: ">=1.20.0"

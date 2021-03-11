@@ -1,11 +1,13 @@
+import 'dart:async';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future setToken(String value) async {
+Future setToken(String? value) async {
   final prefs = await SharedPreferences.getInstance();
-  return prefs.setString('token', value);
+  return prefs.setString('token', value ?? '');
 }
 
-Future<String> getToken() async {
+Future<String?> getToken() async {
   final prefs = await SharedPreferences.getInstance();
-  return prefs.get('token');
+  return prefs.get('token') as FutureOr<String?>;
 }

@@ -17,10 +17,10 @@ class UserView extends StatefulWidget {
 
 class _UserViewState extends State<UserView> {
   final ScrollController _controllerOne = ScrollController();
-  List userList;
+  List? userList;
   var userListController = UserListController();
 
-  Future<List> getUsersList() async {
+  Future<List?> getUsersList() async {
     var newUserList = await api.getUsers();
 
     return newUserList;
@@ -39,7 +39,6 @@ class _UserViewState extends State<UserView> {
   Widget build(BuildContext context) {
     return Consumer<UserListModel>(
       builder: (context, viewModel, child) {
-        print(viewModel.userList);
         final rows = <TableRow>[
           TableRow(children: [
             Padding(
@@ -57,7 +56,7 @@ class _UserViewState extends State<UserView> {
           ]),
         ];
         if (viewModel.userList != null) {
-          for (var rowData in viewModel.userList) {
+          for (var rowData in viewModel.userList!) {
             rows.add(TableRow(children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -87,7 +86,7 @@ class _UserViewState extends State<UserView> {
                       1: FlexColumnWidth(1),
                       2: FlexColumnWidth(1),
                     },
-                    border: TableBorder.all(color: Colors.grey[500]),
+                    border: TableBorder.all(color: Colors.grey[500]!),
                     children: rows,
                   ),
                 ],
