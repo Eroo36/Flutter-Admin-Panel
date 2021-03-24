@@ -1,5 +1,6 @@
 import 'package:admin_panel_flutter/helper/api.dart';
 import 'package:admin_panel_flutter/locator.dart';
+import 'package:admin_panel_flutter/models/home_chart/home_chart_model.dart';
 import 'package:admin_panel_flutter/models/user/user_model.dart';
 import 'package:admin_panel_flutter/models/user_list/user_list_model.dart';
 import 'package:admin_panel_flutter/router/route_names.dart';
@@ -14,7 +15,8 @@ void main() {
   setupLocator();
   runApp(MultiProvider(providers: [
     ListenableProvider<UserModel>(create: (_) => UserModel()),
-    ListenableProvider<UserListModel>(create: (_) => UserListModel())
+    ListenableProvider<UserListModel>(create: (_) => UserListModel()),
+    ListenableProvider<HomeChartModel>(create: (_) => HomeChartModel())
   ], child: MyApp()));
   ApiBaseHelper().login('edogruca123@gmail.com', '123456');
 }
