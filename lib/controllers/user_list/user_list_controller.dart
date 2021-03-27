@@ -6,7 +6,7 @@ import 'package:admin_panel_flutter/models/user_list/user_list_model.dart';
 class UserListController {
   UserListController();
 
-  void setUsers(BuildContext context, List? users) {
+  void setUsers(BuildContext context, List<AUserModel>? users) {
     var viewModel = Provider.of<UserListModel>(context, listen: false);
     viewModel.setUserList(users);
   }

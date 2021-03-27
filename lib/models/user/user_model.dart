@@ -7,10 +7,6 @@ enum UserModelStatus {
 }
 
 class UserModel extends ChangeNotifier {
-  UserModelStatus? _status;
-  String? _errorCode;
-  String? _errorMessage;
-
   String? _name = 'Eren';
   String? _surname = 'Doğruca';
   String? _username = 'Eroo36';
@@ -20,10 +16,6 @@ class UserModel extends ChangeNotifier {
   String? get surname => _surname;
   String? get username => _username;
   String? get email => _email;
-
-  String? get errorCode => _errorCode;
-  String? get errorMessage => _errorMessage;
-  UserModelStatus? get status => _status;
 
   UserModel();
 
